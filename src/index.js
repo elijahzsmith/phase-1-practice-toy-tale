@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toyForm.reset();
   })
 
-  // Like button functionality
-
-
   // function to handle all new card creation
 function addToyInfo(toy) {
   const toyCard = document.createElement("div") // create a card
@@ -77,7 +74,7 @@ function addToyInfo(toy) {
   likeButton.addEventListener("click", function () {
     let newNumberOfLikes = ++toy.likes;
     likesNum.textContent = toy.likes;
-
+    //PATCH request to hold update to like buttons
     fetch(`http://localhost:3000/toys/${toy.id}`, {
       method: "PATCH",
       headers: {
